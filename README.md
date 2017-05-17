@@ -13,7 +13,7 @@ $ npm install
 ```
 * Start fuse preview (I recommend preview on device, as local preview by default does not trust any SSL certificates)
 ```bash
-$ fuse preview -t=(Android|iOS|Local)
+$ fuse preview -t=[Android|iOS|Local] 
 ```
 
 ## GIF
