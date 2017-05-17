@@ -1,0 +1,15 @@
+<Page ux:Class="LoginPage">
+    <Router ux:Dependency="router" />
+    
+    
+
+
+    <ScrollView ClipToBounds="true">
+    <StackPanel>
+        <Text FontSize="30">HellJALLAo, world!</Text>
+        <Slider />
+        <Button Text="Button" />
+        <Switch Alignment="Left" />
+    </StackPanel>
+</ScrollView>
+</Page>

@@ -1,0 +1,103 @@
+
+            <MapViewPage ux:Template='mapView' router='router' />   
+
+            
+Terje doc
+
+
+Query to get datasets that has the tag "Kart"
+https://data.smartbydata.no/api/3/action/package_search?fq=tags:Kart
+
+Query to get info about a dataset
+https://data.smartbydata.no/api/3/action/package_show?id=malestasjoner-for-luftforurensing-i-norge
+
+
+Query to get 50 records from a dataset
+https://data.smartbydata.no/api/action/datastore_search?resource_id=ff7ad62e-e837-41cb-8e6b-fb4dc8af6adc&limit=50
+
+Return all records that contains the word Bergen
+https://data.smartbydata.no/api/action/datastore_search?resource_id=ff7ad62e-e837-41cb-8e6b-fb4dc8af6adc&q=Bergen
+
+
+Creating a general map browser for CKAN has some challenges.
+There are no standards for naming the fields so we cant assume what is the name or title of an entity.
+In the future there will be stand datamodels http://fiware-datamodels.readthedocs.io/en/latest/index.html and https://github.com/Fiware/dataModels
+
+Possible solutions now:
+1. Change all data so that it has standardised naming rules
+-  hard to enforce if people upload data themselves.
+
+2. Create a mapping table for each dataset defining the name mapping
+
+It must be simple for the developer to use the data - to have some results on the screen whitehout knowing the structure of the data.
+
+A mapping file can be used to add standardised fieldnames. 
+The developer can then use these fields to display data on the screen. And not worry about what fieldnames are used in each dataset.
+
+
+
+The mapping can be performed on the server side or the client side.
+
+There is one record like this pr dataset:
+FieldName = Description -> Example
+resource_id = ID of the dataset -> ff7ad62e-e837-41cb-8e6b-fb4dc8af6adc
+nameField = The field that will be mapped to "name" --> Station
+descriptionField = The field that will be mapped to "description" --> Zone
+factual_taxonomy = Number definig what the location is ->https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json
+imageURL = URL to image that will be displayed when listing the dataset -> http://www.gmkfreelogos.com/logos/B/img/Bergen.gif
+mapImageURL = URL to image that will be displayed when items from the dataset is displayed on a map -> https://upload.wikimedia.org/wikipedia/commons/5/5b/174-free-google-maps-pointer.png
+
+
+
+
+var tecMapping = [
+    {
+        resource_id: "ff7ad62e-e837-41cb-8e6b-fb4dc8af6adc",
+        resource_name: "Målestasjoner for luftforurensing i Norge",
+        nameField: "Station",
+        descriptionField: "Zone",
+        factual_taxonomy: 311,
+        imageURL: "http://www.gmkfreelogos.com/logos/B/img/Bergen.gif",
+        mapImageURL: "https://upload.wikimedia.org/wikipedia/commons/5/5b/174-free-google-maps-pointer.png"
+    },
+     {
+        resource_id: "ff7ad62e-e837-41cb-8e6b-fb4dc8af6adc",
+        resource_name: "Målestasjoner for luftforurensing i Norge",
+        nameField: "Station",
+        descriptionField: "Zone",
+        factual_taxonomy: 311,
+        imageURL: "http://www.gmkfreelogos.com/logos/B/img/Bergen.gif",
+        mapImageURL: "https://upload.wikimedia.org/wikipedia/commons/5/5b/174-free-google-maps-pointer.png"
+    },
+    {
+        resource_id: "ff7ad62e-e837-41cb-8e6b-fb4dc8af6adc",
+        resource_name: "Målestasjoner for luftforurensing i Norge",
+        nameField: "Station",
+        descriptionField: "Zone",
+        factual_taxonomy: 311,
+        imageURL: "http://www.gmkfreelogos.com/logos/B/img/Bergen.gif",
+        mapImageURL: "https://upload.wikimedia.org/wikipedia/commons/5/5b/174-free-google-maps-pointer.png"
+    },
+    {
+        resource_id: "ff7ad62e-e837-41cb-8e6b-fb4dc8af6adc",
+        resource_name: "Målestasjoner for luftforurensing i Norge",
+        nameField: "Station",
+        descriptionField: "Zone",
+        factual_taxonomy: 311,
+        imageURL: "http://www.gmkfreelogos.com/logos/B/img/Bergen.gif",
+        mapImageURL: "https://upload.wikimedia.org/wikipedia/commons/5/5b/174-free-google-maps-pointer.png"
+    }
+];
+
+
+module.exports = {
+    tecMapping: tecMapping,
+
+    resource_id: resource_id,
+    resource_name: resource_name,
+    nameField: nameField,
+    descriptionField: descriptionField,
+    factual_taxonomy: factual_taxonomy,
+    imageURL: imageURL,
+    mapImageURL: mapImageURL
+};

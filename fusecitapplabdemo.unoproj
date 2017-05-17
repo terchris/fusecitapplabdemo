@@ -1,0 +1,22 @@
+{
+  "RootNamespace":"",
+  "Packages": [
+    "Fuse.Maps",
+  	"Fuse",
+  	"FuseJS"
+  ],
+  "Includes": [
+    "*",
+    "node_modules/citapplab/lib/bundle.js:Bundle",
+    "ckan.js:Bundle",
+    "tecmappings.js:Bundle", 
+    "oflineDatasetList.js:Bundle",
+    "oflineDataset.js:Bundle",
+    "oflineAttributeAlias.js:Bundle"
+  ],
+  "Android": {
+   "Geo": {
+        "ApiKey": "AIzaSyBtpiXaiHIkHsNeH0HdC_tZE7CepLxFY1Q"
+    }
+  }
+}

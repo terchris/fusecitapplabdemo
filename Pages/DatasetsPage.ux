@@ -1,0 +1,38 @@
+<Page ux:Class='DatasetsPage'>
+	<Router ux:Dependency='router' />
+	<JavaScript File='DatasetsPage.js'/>
+
+
+
+
+    <Panel ux:Class="DatasetItem">
+        <StackPanel ItemSpacing="10" Margin="15">
+            <Text Value="{title}" TextWrapping="Wrap" FontSize="20" Clicked="{showMapList}" />
+            <DockPanel>
+                <Text Value="{organization.description}" TextWrapping="Wrap" FontSize="13" />
+                <Panel Dock="Left">
+                	<Image Url="https://data.smartbydata.no/uploads/group/{organization.image_url}" Width="80" Margin="0,0,10,0" Alignment="TopLeft" />
+                </Panel>
+
+            </DockPanel>
+            <DockPanel>
+                <Text Value="Tags: Kart, Forurensing" FontSize="10" Color="#999" Dock="Left" />
+                <Text Value="by {publisher_email}" FontSize="10" Color="#999" Dock="Right" />
+            </DockPanel>
+        </StackPanel>
+        <Rectangle Color="#FFF" />
+    </Panel>
+
+    <ClientPanel>
+
+        <ScrollView>
+            <StackPanel ItemSpacing="1">
+                <Each Items="{datasetList}">
+                    <DatasetItem />
+                </Each>
+            </StackPanel>
+        </ScrollView>
+    </ClientPanel>
+
+
+</Page>    

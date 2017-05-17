@@ -1,0 +1,44 @@
+<Page ux:Class="MapListPage">
+    <Router ux:Dependency="router" />
+	<JavaScript File='MapPage.js' />    
+    
+
+
+
+    <Panel ux:Class="MapItems">
+        <StackPanel ItemSpacing="10" Margin="15">
+            <Text Value="{name}" TextWrapping="Wrap" FontSize="20" />
+            <DockPanel>
+                <Text Value="{description}" TextWrapping="Wrap" FontSize="13" />
+            </DockPanel>
+            <DockPanel>
+                <Text Value="ResorceList" FontSize="10" Color="#999" Dock="Left" />
+                <Text Value="by Terje" FontSize="10" Color="#999" Dock="Right" />
+            </DockPanel>
+        </StackPanel>
+        <Rectangle Color="#FFF" />
+    </Panel>
+
+
+
+
+
+
+
+    <ClientPanel>
+    <StackPanel>
+        <Text FontSize="30">TopListPager</Text>
+    </StackPanel>
+
+        <ScrollView>
+            <StackPanel ItemSpacing="1">
+                <Each Items="{datasetItemList}">
+                    <MapItems />
+                </Each>
+            </StackPanel>
+        </ScrollView>
+    </ClientPanel>
+
+
+</Page>
+

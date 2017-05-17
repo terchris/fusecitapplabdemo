@@ -1,0 +1,24 @@
+<Page ux:Class='MapViewPage'>
+	<Router ux:Dependency='router' />
+	<JavaScript File='MapPage.js' />
+
+
+	<NativeViewHost>
+		<DockPanel>
+			<MapView Latitude='60' Longitude='10.81' Zoom='8' ShowMyLocation="true" ShowMyLocationButton="true" >
+				<Each Items='{datasetItemList}'>
+					<MapMarker Latitude='{latitude}' Longitude='{longitude}' Label='{name}' />
+				</Each>
+			</MapView>
+
+			
+
+            <DockPanel Dock='Bottom'>
+            	<Button Dock='Left' Text='Go Back!' Clicked='{goBack}' />
+            	<Button Dock='Right' Text='List' Clicked='{goBack}' />            	
+            </DockPanel>
+
+
+		</DockPanel>
+	</NativeViewHost>
+</Page>

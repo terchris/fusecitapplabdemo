@@ -1,0 +1,37 @@
+<App>
+	<Android.StatusBarConfig Color="#0003" IsVisible="True" />
+	<iOS.StatusBarConfig Style="Light" Animation="Slide" IsVisible="True" />
+
+
+		<JavaScript>
+			var Observable = require("FuseJS/Observable");
+
+			var titleHeading = Observable("Urbalurba Maps");
+
+			module.exports = {
+				titleHeading: titleHeading
+			};
+		</JavaScript>
+
+
+
+	<Router ux:Name='router' />
+	<ClientPanel>
+		<Navigator DefaultPath='datasets'>
+			<DatasetsPage ux:Template='datasets' router='router' />		
+        	<LoginPage ux:Template="login" router="router" />
+        	<MapListPage ux:Template="mapListView" router="router" />
+			<MapViewPage ux:Template='mapView' router='router' />	
+
+		</Navigator>
+
+
+
+        <Panel Dock="Top" Height="46">
+	            <Text Value="{titleHeading}" Color="#ECEFF1" FontSize="28" Alignment="Center" />
+            <Rectangle Color="#37474F" />
+            <Shadow />
+        </Panel>
+
+	</ClientPanel>
+</App>

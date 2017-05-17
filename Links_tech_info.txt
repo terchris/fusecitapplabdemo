@@ -1,0 +1,13 @@
+Links to tech info
+
+
+http://jsonprettyprint.com
+
+
+Iterating over a JavaScript object in sort order based on particular key value of a child object
+http://stackoverflow.com/questions/4041762/iterating-over-a-javascript-object-in-sort-order-based-on-particular-key-value-of/4041878#4041878
+
+
+
+Adding/removing items from JSON data
+http://stackoverflow.com/questions/4538269/adding-removing-items-from-json-data-with-jquery
