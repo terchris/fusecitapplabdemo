@@ -1,9 +1,0 @@
-<App>
-	<Router ux:Name='router' />
-	<ClientPanel>
-		<Navigator DefaultPath='HomePage'>
-			<HomePage ux:Template='HomePage' router='router' />
-			<Resources ux:Template='Resources' router='router' />
-		</Navigator>
-	</ClientPanel>
-</App>
